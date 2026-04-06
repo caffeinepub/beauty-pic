@@ -1,36 +1,41 @@
-# Beauty Pic
+# Beauty Pic - Premium Editor Upgrade
 
 ## Current State
-New project, no existing application files.
+- EditorPage has basic filter sliders (brightness, contrast, blur, grayscale, sepia, saturate)
+- Text overlay with single fixed pink color and font
+- 8 basic emoji stickers
+- No frames, no font change, no text position dragging, no category-wise editing
+- HomeScreen has 4 basic cards, no AI Beauty or premium branding
 
 ## Requested Changes (Diff)
 
 ### Add
-- Splash screen with animated logo (2 second display before home)
-- Home screen with Camera, Photo Editor, Gallery, and Video Editor buttons
-- Camera page: access device camera via browser APIs, apply beauty filters (smooth, brightness, whitening) using Canvas, capture photos, record video
-- Photo Editor page: load photos from gallery or camera, apply filters (brightness, blur, contrast, grayscale), crop, add text overlays, save
-- Gallery page: display saved photos/videos in a grid layout
-- Video recorder page: record video via browser MediaRecorder API, basic trim option
-- APK installer info section: a dedicated page explaining how to install the web app as a PWA on Android (Add to Home Screen), with a downloadable guide and manifest/service worker setup for PWA installability
-- PWA manifest and service worker so the app can be installed on Android as a home screen app (closest to APK experience on web)
-- Beauty theme: pink (#FF69B4, #FFC0CB), white, soft gradients, modern Material-inspired UI
-- Smooth page transitions and animations
-- App icon and logo (generated image)
+- **Category-wise editing tabs** in EditorPage: Beauty, Filters, Adjust, Text, Stickers, Frames
+- **AI Beauty skin tools**: Skin Smooth, Whitening, Blemish Remove, Face Glow, Eye Enhance, Lip Color — each with intensity slider
+- **Premium Photo Filters** (category): Glamour, Rose Gold, Cinematic, Vintage, Vivid, Cool, Warm, Noir, Sunset, Dreamy
+- **Frame selector** panel with 10+ decorative frame options (colors/patterns rendered via CSS/canvas overlay)
+- **Text tool upgrades**: font family picker (5+ fonts from available fonts), font size slider, color picker (10 preset colors), text position dragging on image, bold/italic toggles
+- **Emoji category picker**: Nature, Love, Stars, Beauty, Food, Travel — scrollable grid of 30+ emojis per category
+- **HD Export button** that exports at full native resolution with quality=1.0
+- **Premium badge / crown icon** on editor header to denote premium quality
+- AI Beauty section card on HomeScreen
 
 ### Modify
-N/A
+- EditorPage UI: full tab-based layout with category icons at bottom, premium gradient header
+- Sticker panel: expanded to category tabs with many more emojis
+- HomeScreen: add AI Beauty card and update welcome message
 
 ### Remove
-N/A
+- Old flat filter slider section replaced by tabbed Adjust section
+- Old single-row sticker row replaced by category sticker panel
 
 ## Implementation Plan
-1. Generate app logo/icon image
-2. Set up PWA manifest and service worker for Android installability
-3. Backend: store saved photos (blob references) per session using blob-storage component
-4. Frontend: Splash screen -> Home -> Camera / Photo Editor / Gallery / Video / Install Guide pages
-5. Camera page using getUserMedia + Canvas filters
-6. Photo editor using Canvas API with filter controls
-7. Gallery grid pulling saved images
-8. Install Guide page with step-by-step Android PWA install instructions
-9. Pink/white beauty theme throughout
+1. Rebuild EditorPage with tabbed bottom navigation (6 tabs: Beauty, Filters, Adjust, Text, Stickers, Frames)
+2. Beauty tab: AI skin sliders (Smooth, Whitening, Glow, Eye, Blemish) with CSS filter approximations
+3. Filters tab: visual filter cards with thumbnail previews showing named preset filters
+4. Adjust tab: existing sliders (brightness, contrast, saturation, blur, etc.)
+5. Text tab: input + font picker + size + color picker + bold/italic + draggable overlay on image
+6. Stickers tab: category tabs (Love, Nature, Stars, Beauty, Travel, Food) with emoji grids
+7. Frames tab: frame options rendered as CSS border/overlay on image preview
+8. HD Save button with full resolution export
+9. HomeScreen: add AI Beauty card

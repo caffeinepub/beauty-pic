@@ -9,6 +9,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Parisienne";
+  src: url("/assets/fonts/Parisienne.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --radius: 1rem;
@@ -52,8 +87,40 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Figtree", system-ui, sans-serif;
   }
+}
+
+/* Beauty slider custom pink track */
+.beauty-slider [data-orientation="horizontal"] {
+  height: 6px;
+  background: linear-gradient(90deg, #ffb6c1, #ff69b4);
+  border-radius: 9999px;
+}
+
+.beauty-slider [role="slider"] {
+  background: linear-gradient(135deg, #ff69b4, #c2185b);
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.5);
+  width: 20px;
+  height: 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 105, 180, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 105, 180, 0.5);
 }
