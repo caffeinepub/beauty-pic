@@ -1,0 +1,16 @@
+{
+  "name": "Beauty Pic",
+  "short_name": "Beauty Pic",
+  "description": "Beauty camera and photo editor",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFC0CB",
+  "theme_color": "#FF69B4",
+  "icons": [
+    {
+      "src": "/assets/generated/beauty-pic-logo-transparent.dim_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}

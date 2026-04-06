@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Pink beauty theme - OKLCH L C H */
+    --background: 0.97 0.01 355;
+    --foreground: 0.25 0.04 350;
+    --card: 1 0 0;
+    --card-foreground: 0.25 0.04 350;
+    --popover: 1 0 0;
+    --popover-foreground: 0.25 0.04 350;
+    --primary: 0.72 0.22 350;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.86 0.09 355;
+    --secondary-foreground: 0.47 0.22 350;
+    --muted: 0.93 0.04 355;
+    --muted-foreground: 0.55 0.08 350;
+    --accent: 0.86 0.09 355;
+    --accent-foreground: 0.47 0.22 350;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.88 0.06 355;
+    --input: 0.88 0.06 355;
+    --ring: 0.72 0.22 350;
+    --pink-dark: 0.47 0.22 350;
+    --pink-light: 0.93 0.05 355;
+    --chart-1: 0.72 0.22 350;
+    --chart-2: 0.86 0.09 355;
+    --chart-3: 0.47 0.22 350;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.25 0.04 350;
+    --sidebar-primary: 0.72 0.22 350;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.04 355;
+    --sidebar-accent-foreground: 0.25 0.04 350;
+    --sidebar-border: 0.88 0.06 355;
+    --sidebar-ring: 0.72 0.22 350;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", system-ui, sans-serif;
+  }
+}
