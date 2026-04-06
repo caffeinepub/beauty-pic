@@ -12,7 +12,9 @@ import EditorPage from "./pages/EditorPage";
 import GalleryPage from "./pages/GalleryPage";
 import HomeScreen from "./pages/HomeScreen";
 import InstallPage from "./pages/InstallPage";
+import PassportEditorPage from "./pages/PassportEditorPage";
 import SplashScreen from "./pages/SplashScreen";
+import VideoEditorPage from "./pages/VideoEditorPage";
 
 function RootLayout() {
   useEffect(() => {
@@ -54,6 +56,12 @@ const editorRoute = createRoute({
   component: EditorPage,
 });
 
+const videoEditorRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/video-editor",
+  component: VideoEditorPage,
+});
+
 const galleryRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/gallery",
@@ -66,13 +74,21 @@ const installRoute = createRoute({
   component: InstallPage,
 });
 
+const passportEditorRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/passport-editor",
+  component: PassportEditorPage,
+});
+
 const routeTree = rootRoute.addChildren([
   splashRoute,
   homeRoute,
   cameraRoute,
   editorRoute,
+  videoEditorRoute,
   galleryRoute,
   installRoute,
+  passportEditorRoute,
 ]);
 
 const router = createRouter({

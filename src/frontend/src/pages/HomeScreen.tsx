@@ -1,7 +1,9 @@
 import { useLocation, useNavigate } from "@tanstack/react-router";
 import {
   Camera,
+  CreditCard,
   Download,
+  Film,
   Home,
   ImageIcon,
   Images,
@@ -12,8 +14,9 @@ import { motion } from "motion/react";
 const navItems = [
   { icon: Home, label: "Home", path: "/home" as const },
   { icon: Camera, label: "Camera", path: "/camera" as const },
+  { icon: Film, label: "Video", path: "/video-editor" as const },
+  { icon: CreditCard, label: "Passport", path: "/passport-editor" as const },
   { icon: Images, label: "Gallery", path: "/gallery" as const },
-  { icon: Download, label: "Install", path: "/install" as const },
 ];
 
 const mainCards = [
@@ -34,6 +37,24 @@ const mainCards = [
     gradient: "linear-gradient(135deg,#FF69B4,#FF1493)",
     ocid: "home.editor_button",
     emoji: "🖼️",
+  },
+  {
+    icon: Film,
+    label: "Video Editor",
+    description: "Edit videos & add music",
+    path: "/video-editor" as const,
+    gradient: "linear-gradient(135deg,#7B2FBE,#C2185B)",
+    ocid: "home.videoeditor_button",
+    emoji: "🎬",
+  },
+  {
+    icon: CreditCard,
+    label: "Passport Editor",
+    description: "ID & passport photo maker",
+    path: "/passport-editor" as const,
+    gradient: "linear-gradient(135deg,#1565C0,#7B1FA2)",
+    ocid: "home.passport_button",
+    emoji: "🪪",
   },
   {
     icon: Sparkles,
@@ -96,7 +117,7 @@ export default function HomeScreen() {
               Beauty Pic
             </h1>
             <p className="text-xs" style={{ color: "rgba(194,24,91,0.7)" }}>
-              Premium AI Photo Editor
+              Premium AI Photo & Video Editor
             </p>
           </div>
           <div className="ml-auto flex items-center gap-1">
@@ -169,7 +190,7 @@ export default function HomeScreen() {
               Hello, Beautiful! ✨
             </h2>
             <p className="text-pink-100 text-sm relative z-10">
-              Your premium AI photo editor ✨
+              Your premium AI photo &amp; video editor ✨
             </p>
             <div className="mt-4 flex items-center gap-2 relative z-10">
               <span
@@ -188,7 +209,7 @@ export default function HomeScreen() {
                   backdropFilter: "blur(4px)",
                 }}
               >
-                HD Export
+                🎬 Video
               </span>
               <span
                 className="text-xs px-3 py-1 rounded-full font-bold"
@@ -197,7 +218,7 @@ export default function HomeScreen() {
                   backdropFilter: "blur(4px)",
                 }}
               >
-                Premium
+                🪪 Passport
               </span>
             </div>
           </motion.div>
